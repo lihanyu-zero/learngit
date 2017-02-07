@@ -9,3 +9,7 @@ gogogo
 aleialeialei
 Creating a new branch is quick and simple.
 
+We hold these truth to be self-evident, that all men are created equal,
+that they are endowed by their Creator with certain unalienable rights,
+that they are among these are life, liberty and the pursuit of happiness.
+ 
