@@ -11,3 +11,6 @@ I just wanna lie in my bed.
 We hold these truth to be self-evident, that all men are created equal,
 that they are endowed by their Creator with certain unalienable rights,
 that they are among these are life, liberty and the pursuit of happiness.
+
+goverment of the people, by the people, for the people, shall not perish from the Earth.
+Abraham Lincoln
