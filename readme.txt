@@ -6,7 +6,3 @@ I just wanna lie in my bed.
 任何在我15~35岁出现的科技都将是会改变世界的革命性产物。
 任何在我35岁之后出现的科技都是违反自然规律要遭天谴的。
 Creating a new branch is quick and simple.
-
-We hold these truth to be self-evident, that all men are created equal,
-that they are endowed by their Creator with certain unalienable rights,
-that they are among these are life, liberty and the pursuit of happiness.
