@@ -2,27 +2,88 @@
 <html>
 <head>
 <title>test1</title>
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
     <body>
         <div id="app">
             <h1>编辑姓名：<input type="text" v-model="Name"/></h1>
-            <h1>姓名：{{ Name }}</h1>
-            <h1>年龄：<label v-text="Name"></label></h1>
-            <div v-html="Age">学校：</div>
+            <h1>姓名：{{Name}}</h1>
+            <h1>编辑备注：<textarea v-model="Remark"></textarea></h1>
+            <h1>备注：{{Remark}}</h1>
+            <h1>年龄：<input type="text" v-model="Age"></h1>
+            <button class="btn btn-primary" v-on:click="Age++;if(Name=='小明')Name='小红';else Name='小明'">长一岁</button>
+            <button class="btn btn-primary" v-on:click="hello">减一岁</button>
+            <input type="checkbox" id="basketball" v-model="Hobby" value="篮球">
+            <label for="basketball">篮球</label>
+            <input type="checkbox" id="football" v-model="Hobby" value="足球">
+            <label for="football">足球</label>
+            <input type="checkbox" id="running" v-model="Hobby" value="跑步">
+            <label for="running">跑步</label> 
+            <h1>学生爱好：{{Hobby}}</h1> 
+            <h1>户籍：{{Huji}}</h1>    
+            <select v-model="Huji">                
+                <option>湖南</option>
+                <option>广东</option>
+                <option>北京</option>
+            </select>
+            <h1>是否已婚：<span v-if="IsMarry">是</span><span v-else>否</span>
+            </h1>
+            <h1>大人or小孩
+                <span v-if="Age>18" v-bind:style="{color:adult}">大人</span>
+                <span v-else v-bind:style="{color:child}">小屁孩</span>
+            </h1>
+            <ul>
+                <li v-for="value in nums">{{value}}</li>
+            </ul>
+            <ul>
+                <li v-for="item in values">
+                    姓名：{{item.Name}} ,
+                    年龄：{{item.Age}}
+                </li>
+                <li v-for="(item, index) in values">
+                    {{index}}
+                    姓名：{{item.Name}} ,
+                    年龄：{{item.Age}}
+                </li>
+            </ul>
+            <nav>
+                <ul class="pagination">
+                    <template v-for="page in pages">
+                        <li v-if="page==1" class="disabled"><a href="#">上一页</a></li>
+                        <li v-if="page==1" class="active"><a href="#">{{page}}</a></li>
+                        <li v-else><a href="#">{{page}}</a></li>      
+                        <li v-if="page==pages"><a href="#">下一页</a></li>
+                    </template>  
+                </ul>
+            </nav>
         </div>
         <script src="js/vue.js"></script>
         <script type="text/javascript">
             // Model
             var data = {
-                Name: "小明",
-                Age : "<label>18</label>",
-                School : "光明小学"
+                Name : "小明",
+                Age : "16",
+                School : "光明小学",
+                Remark : "三好学生",
+                Hobby : [],               
+                Huji : '',
+                IsMarry : false,
+                nums : [1,2,3,4,5,6,7,8,9],
+                values : [{Name: "小名", Age: 20},{Name: "小刚", Age: 18},{Name:"小红", Age:16}],
+                pages : 10,
+                adult : "#f00",
+                child : "#ff0"
             }
-            
             // Viewmodel
             var vue = new Vue({
                 el: "#app",
-                data: data
+                data: data,
+                methods: {
+                    hello: function (event) {
+                        alert(" hello " + this.Name + "!")
+                        this.Age--;
+                    }
+                }
             });
         </script>
     </body>
